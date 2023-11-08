@@ -1,5 +1,5 @@
 ---
-name: Issue ticket - 1
+name: Issue ticket
 about: planning
 title: ''
 labels: ''
