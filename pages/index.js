@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import { getAlbum } from '../API/albumAPI';
+import { getAlbum } from '../api/albumApi';
 import { useAuth } from '../utils/context/authContext';
 import AlbumCard from '../components/albumCards';
 
@@ -18,6 +18,8 @@ function Home() {
   useEffect(() => {
     getAllTheAlbum();
   }, []);
+
+  console.warn(Album);
 
   return (
     <div className="text-center my-4">

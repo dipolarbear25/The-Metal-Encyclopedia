@@ -1,82 +1,38 @@
 {
   "-NjjFRg3Ct9-QEfEmIPG": {
-    "id": 1,
     "Albumlogo": "https://www.soundfiction.net/wp-content/uploads/2020/06/currents-the-way-its-pictured.jpg",
+    "Albumreleasedate": "June 5, 2020",
     "Albumtitle": "The way it ends",
     "Bandname": "Currents",
-    "Albumreleasedate": "June 5, 2020",
-    "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
-  },
-  "-NjjFRg4akeViFgLmWms": {
-    "id": 2,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "6/6/2021",
+    "firebaseKey": "-NjjFRg3Ct9-QEfEmIPG",
+    "id": 1,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
   },
   "-NjjFRg6F_2mLitQZCNr": {
-    "id": 3,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "1/11/2020",
-    "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
-  },
-  "-NjjFRg7VsL_Ap8zon95": {
-    "id": 4,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "11/12/2021",
-    "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
-  },
-  "-NjjFRg84CowfeNg6uLH": {
-    "id": 5,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "6/10/2020",
+    "Albumlogo": "https://upload.wikimedia.org/wikipedia/en/c/c6/WhitechapelKin.jpg",
+    "Albumreleasedate": " October 29, 2021",
+    "Albumtitle": "Kin",
+    "Bandname": "Whitechaple",
+    "firebaseKey": "-NjjFRg6F_2mLitQZCNr",
+    "id": 2,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
   },
   "-NjjFRg9Nd217J0sD39X": {
-    "id": 6,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "7/16/2020",
+    "Albumlogo": "https://upload.wikimedia.org/wikipedia/en/7/7a/FitforanAutopsyTGC.jpg",
+    "Albumreleasedate": "March 17, 2017",
+    "Albumtitle": "The great collapse",
+    "Bandname": "Fir for an autopsy",
+    "firebaseKey": "-NjjFRg9Nd217J0sD39X",
+    "id": 3,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
   },
   "-NjjFRgAw8JVUpOxO_q0": {
-    "id": 7,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "8/2/2022",
-    "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
-  },
-  "-NjjFRgC7o7_nIjNN_S9": {
-    "id": 8,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "1/24/2022",
-    "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
-  },
-  "-NjjFRgDdncAC4-N6j9F": {
-    "id": 9,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "2/5/2020",
-    "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
-  },
-  "-NjjFRgEKHdmnFTzww5_": {
-    "id": 10,
-    "Albumlogo": "",
-    "Albumtitle": "",
-    "Bandname": "",
-    "Albumreleasedate": "8/3/2021",
+    "Albumlogo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/AmonAmarthJomsviking.jpg/220px-AmonAmarthJomsviking.jpg",
+    "Albumreleasedate": "March 25, 2016",
+    "Albumtitle": "Jomsviking",
+    "Bandname": "Amon Amarth",
+    "firebaseKey": "-NjjFRgAw8JVUpOxO_q0",
+    "id": 4,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
   }
 }

@@ -8,10 +8,10 @@ import { signOut } from '../utils/auth';
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="nav-bar">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>CHANGE ME</Navbar.Brand>
+          <Navbar.Brand>The Metal Encyclopedia</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -19,10 +19,10 @@ export default function NavBar() {
             <Link passHref href="/">
               <Nav.Link>My albums</Nav.Link>
             </Link>
-            <Link passHref href="/forms/albumform">
+            <Link passHref href="/albums/new">
               <Nav.Link>create an album</Nav.Link>
             </Link>
-            <Button variant="danger" onClick={signOut}>Sign Out</Button>
+            <Button variant="danger" id="sign-out" onClick={signOut}>Sign Out</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

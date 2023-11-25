@@ -14,7 +14,6 @@ const getAlbum = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE Team
 const deleteAlbum = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/Albums/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -27,7 +26,6 @@ const deleteAlbum = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET SINGLE Team
 const getSingleAlbum = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/Albums/${firebaseKey}.json`, {
     method: 'GET',
@@ -40,7 +38,6 @@ const getSingleAlbum = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: CREATE Team
 const createAlbum = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/Albums.json`, {
     method: 'POST',
@@ -54,7 +51,6 @@ const createAlbum = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: UPDATE Team
 const updateAlbum = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/Albums/${payload.firebaseKey}.json`, {
     method: 'PATCH',

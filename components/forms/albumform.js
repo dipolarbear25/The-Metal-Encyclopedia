@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'react-bootstrap';
-import { createAlbum, updateAlbum, getAlbum } from '../../API/albumAPI';
+import { createAlbum, updateAlbum, getAlbum } from '../../api/albumApi';
 import { useAuth } from '../../utils/context/authContext';
 
 const intialState = {
-  Albumtitle: '',
-  Albumlogo: '',
-  Bandname: '',
-  Albumreleasedate: '',
+  albumTitle: '',
+  albumLogo: '',
+  bandName: '',
+  albumReleaseDate: '',
 };
 
-function PlayerForm({ obj }) {
+function AlbumForm({ obj }) {
   const [formInput, setFormInput] = useState(intialState);
-  const [, setPlayers] = useState([]);
+  const [, setAlbum] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     if (obj.firebaseKey) setFormInput(obj);
-    getAlbum(user.uid).then(setPlayers);
+    getAlbum(user.uid).then(setAlbum);
   }, [obj, user]);
 
   const handleChange = (e) => {
@@ -52,10 +52,10 @@ function PlayerForm({ obj }) {
     <>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>first name</Form.Label>
+          <Form.Label>Album Title</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter player first name"
+            placeholder="Enter the albums title."
             name="Albumtitle"
             value={formInput.Albumtitle}
             onChange={handleChange}
@@ -64,10 +64,10 @@ function PlayerForm({ obj }) {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>last name</Form.Label>
+          <Form.Label>Album cover</Form.Label>
           <Form.Control
-            type="text"
-            placeholder="Enter player last name"
+            type="url"
+            placeholder="Please give a URL of this albums cover"
             name="Albumlogo"
             value={formInput.Albumlogo}
             onChange={handleChange}
@@ -75,10 +75,10 @@ function PlayerForm({ obj }) {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Bandname</Form.Label>
+          <Form.Label>Band name</Form.Label>
           <Form.Control
-            type="url"
-            placeholder="Enter player Bandname"
+            type="text"
+            placeholder="Enter band name"
             name="Bandname"
             value={formInput.Bandname}
             onChange={handleChange}
@@ -86,10 +86,10 @@ function PlayerForm({ obj }) {
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Albumreleasedate</Form.Label>
+          <Form.Label>Album release date</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter player Albumreleasedate"
+            placeholder="Enter the albums release date"
             name="Albumreleasedate"
             value={formInput.Albumreleasedate}
             onChange={handleChange}
@@ -97,14 +97,14 @@ function PlayerForm({ obj }) {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          {obj.firebaseKey ? 'Update player' : 'Submit player'}
+          {obj.firebaseKey ? 'Update Album' : 'Submit Album'}
         </Button>
       </Form>
     </>
   );
 }
 
-PlayerForm.propTypes = {
+AlbumForm.propTypes = {
   obj: PropTypes.shape({
     first_name: PropTypes.string,
     image: PropTypes.string,
@@ -116,8 +116,8 @@ PlayerForm.propTypes = {
   }),
 };
 
-PlayerForm.defaultProps = {
+AlbumForm.defaultProps = {
   obj: intialState,
 };
 
-export default PlayerForm;
+export default AlbumForm;
