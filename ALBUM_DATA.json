@@ -1,36 +1,36 @@
 {
   "-NjjFRg3Ct9-QEfEmIPG": {
-    "Albumlogo": "https://www.soundfiction.net/wp-content/uploads/2020/06/currents-the-way-its-pictured.jpg",
-    "Albumreleasedate": "June 5, 2020",
-    "Albumtitle": "The way it ends",
-    "Bandname": "Currents",
+    "albumLogo": "https://www.soundfiction.net/wp-content/uploads/2020/06/currents-the-way-its-pictured.jpg",
+    "albumReleaseDate": "June 5, 2020",
+    "albumTitle": "The way it ends",
+    "bandName": "Currents",
     "firebaseKey": "-NjjFRg3Ct9-QEfEmIPG",
     "id": 1,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
   },
   "-NjjFRg6F_2mLitQZCNr": {
-    "Albumlogo": "https://upload.wikimedia.org/wikipedia/en/c/c6/WhitechapelKin.jpg",
-    "Albumreleasedate": " October 29, 2021",
-    "Albumtitle": "Kin",
-    "Bandname": "Whitechaple",
+    "albumLogo": "https://upload.wikimedia.org/wikipedia/en/c/c6/WhitechapelKin.jpg",
+    "albumReleaseDate": " October 29, 2021",
+    "albumTitle": "Kin",
+    "bandName": "Whitechaple",
     "firebaseKey": "-NjjFRg6F_2mLitQZCNr",
     "id": 2,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
   },
   "-NjjFRg9Nd217J0sD39X": {
-    "Albumlogo": "https://upload.wikimedia.org/wikipedia/en/7/7a/FitforanAutopsyTGC.jpg",
-    "Albumreleasedate": "March 17, 2017",
-    "Albumtitle": "The great collapse",
-    "Bandname": "Fir for an autopsy",
+    "albumLogo": "https://upload.wikimedia.org/wikipedia/en/7/7a/FitforanAutopsyTGC.jpg",
+    "albumReleaseDate": "March 17, 2017",
+    "albumTitle": "The great collapse",
+    "bandName": "Fir for an autopsy",
     "firebaseKey": "-NjjFRg9Nd217J0sD39X",
     "id": 3,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"
   },
   "-NjjFRgAw8JVUpOxO_q0": {
-    "Albumlogo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/AmonAmarthJomsviking.jpg/220px-AmonAmarthJomsviking.jpg",
-    "Albumreleasedate": "March 25, 2016",
-    "Albumtitle": "Jomsviking",
-    "Bandname": "Amon Amarth",
+    "albumLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/AmonAmarthJomsviking.jpg/220px-AmonAmarthJomsviking.jpg",
+    "albumReleaseDate": "March 25, 2016",
+    "albumTitle": "Jomsviking",
+    "bandName": "Amon Amarth",
     "firebaseKey": "-NjjFRgAw8JVUpOxO_q0",
     "id": 4,
     "uid": "tg9MCwJleuhOr7bExsomaERgjFZ2"

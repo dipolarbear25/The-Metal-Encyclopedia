@@ -1,33 +1,39 @@
-/* eslint-disable @next/next/no-img-element */
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import { getAlbumDetails } from '../../api/albumApi';
+import { React, useEffect, useState } from 'react';
+import Link from 'next/link';
+import Button from 'react-bootstrap/Button';
+import { getSong } from '../../api/songApi';
+import SongCard from '../../components/songCards';
+import { useAuth } from '../../utils/context/authContext';
 
-export default function ViewAlbum() {
-  const [, setAlbumDetails] = useState({});
+function ViewAlbumSongs() {
+  const [albumDetails, setalbumDetails] = useState([]);
 
-  const router = useRouter();
-
-  const { firebaseKey } = router.query;
+  const { user } = useAuth();
 
   const getADetails = () => {
-    getAlbumDetails(firebaseKey).then(setAlbumDetails);
+    getSong(user.uid).then(setalbumDetails);
   };
 
   useEffect(() => {
     getADetails();
   });
 
+  console.warn(albumDetails);
+
   return (
-    <>
-      <div className="viewTxt">
-        {/* <h5>
-          Song name: {AlbumDetails.first_name} {AlbumDetails.last_name}
-          <br /> position: {AlbumDetails.position}
-        </h5>
-        <h5>Height: {AlbumDetails.height}</h5>
-        <h5>weight: {AlbumDetails.weight}</h5> */}
+    <div className="text-center my-4">
+      <div>
+        <Link href="/albums/new" passHref>
+          <Button>Add an album</Button>
+        </Link>
+        <div className="d-flex flex-wrap">
+          {albumDetails.map((song) => (
+            <SongCard key={song.firebaseKey} Obj={song} onUpdate={getADetails} />
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
+
+export default ViewAlbumSongs;

@@ -7,25 +7,23 @@ import Link from 'next/link';
 // import Image from 'next/image';
 import { deleteAlbum } from '../api/albumApi';
 
-function AlbumCard({ playerObj, onUpdate }) {
+function AlbumCard({ Obj, onUpdate }) {
   const deleteThisAlbum = () => {
-    if (window.confirm(`Would you like to delete ${playerObj.Albumtitle}?`)) {
-      deleteAlbum(playerObj.firebaseKey).then(() => onUpdate());
+    if (window.confirm(`Would you like to delete ${Obj.albumTitle}?`)) {
+      deleteAlbum(Obj.firebaseKey).then(() => onUpdate());
     }
   };
-
-  console.warn(playerObj);
 
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
-        <img src={playerObj.Albumlogo} alt="Album Cover" width="200" height="180" />
-        <Card.Title>{playerObj.Albumtitle}</Card.Title>
-        <p className="card-text bold">Release Date: {playerObj.Albumreleasedate}</p>
-        <Link href={`/songs/${playerObj.firebaseKey}`} passHref>
+        <img src={Obj.albumLogo} alt="Album Cover" width="200" height="180" />
+        <Card.Title>{Obj.albumTitle}</Card.Title>
+        <p className="card-text bold">Release Date: {Obj.albumReleaseDate}</p>
+        <Link href={`/songs/${Obj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/albums/edit/${playerObj.firebaseKey}`} passHref>
+        <Link href={`/albums/edit/${Obj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisAlbum} className="m-2">
@@ -37,12 +35,12 @@ function AlbumCard({ playerObj, onUpdate }) {
 }
 
 AlbumCard.propTypes = {
-  playerObj: PropTypes.shape({
+  Obj: PropTypes.shape({
     id: PropTypes.number,
-    Albumlogo: PropTypes.string,
-    Albumreleasedate: PropTypes.string,
-    Albumtitle: PropTypes.string,
-    Bandname: PropTypes.string,
+    albumLogo: PropTypes.string,
+    albumReleaseDate: PropTypes.string,
+    albumTitle: PropTypes.string,
+    bandName: PropTypes.string,
     firebaseKey: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,

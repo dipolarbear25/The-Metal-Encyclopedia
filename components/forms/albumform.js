@@ -56,8 +56,8 @@ function AlbumForm({ obj }) {
           <Form.Control
             type="text"
             placeholder="Enter the albums title."
-            name="Albumtitle"
-            value={formInput.Albumtitle}
+            name="albumTitle"
+            value={formInput.albumTitle}
             onChange={handleChange}
             required
           />
@@ -68,8 +68,8 @@ function AlbumForm({ obj }) {
           <Form.Control
             type="url"
             placeholder="Please give a URL of this albums cover"
-            name="Albumlogo"
-            value={formInput.Albumlogo}
+            name="albumLogo"
+            value={formInput.albumLogo}
             onChange={handleChange}
             required
           />
@@ -79,8 +79,8 @@ function AlbumForm({ obj }) {
           <Form.Control
             type="text"
             placeholder="Enter band name"
-            name="Bandname"
-            value={formInput.Bandname}
+            name="bandName"
+            value={formInput.bandName}
             onChange={handleChange}
             required
           />
@@ -90,8 +90,8 @@ function AlbumForm({ obj }) {
           <Form.Control
             type="text"
             placeholder="Enter the albums release date"
-            name="Albumreleasedate"
-            value={formInput.Albumreleasedate}
+            name="albumReleaseDate"
+            value={formInput.albumReleaseDate}
             onChange={handleChange}
             required
           />
@@ -106,12 +106,10 @@ function AlbumForm({ obj }) {
 
 AlbumForm.propTypes = {
   obj: PropTypes.shape({
-    first_name: PropTypes.string,
-    image: PropTypes.string,
-    last_name: PropTypes.string,
-    weight: PropTypes.string,
-    height: PropTypes.string,
-    position: PropTypes.string,
+    albumTitle: PropTypes.string,
+    albumLogo: PropTypes.string,
+    bandName: PropTypes.string,
+    albumReleaseDate: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };

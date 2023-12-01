@@ -19,20 +19,18 @@ function Home() {
     getAllTheAlbum();
   }, []);
 
-  console.warn(Album);
-
   return (
     <div className="text-center my-4">
       <h1>
         Welcome, {user.displayName}!
       </h1>
       <div>
-        <Link href="/" passHref>
+        <Link href="/albums/new" passHref>
           <Button>Add an album</Button>
         </Link>
         <div className="d-flex flex-wrap">
           {Album.map((album) => (
-            <AlbumCard key={album.firebaseKey} playerObj={album} onUpdate={getAllTheAlbum} />
+            <AlbumCard key={album.firebaseKey} Obj={album} onUpdate={getAllTheAlbum} />
           ))}
         </div>
       </div>

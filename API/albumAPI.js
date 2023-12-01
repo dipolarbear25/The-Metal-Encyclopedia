@@ -65,9 +65,9 @@ const updateAlbum = (payload) => new Promise((resolve, reject) => {
 });
 
 const getAlbumDetails = async (firebaseKey) => {
-  const player = await getSingleAlbum(firebaseKey);
+  const album = await getSingleAlbum(firebaseKey);
 
-  return { ...player };
+  return { ...album };
 };
 
 export {

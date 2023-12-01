@@ -12,6 +12,5 @@ export default function EditAlbum() {
     getSingleAlbum(firebaseKey).then(setEditItem);
   }, [firebaseKey]);
 
-  console.warn(editItem);
   return (<AlbumForm obj={editItem} />);
 }

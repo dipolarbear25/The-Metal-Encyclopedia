@@ -3,7 +3,7 @@ import { clientCredentials } from '../utils/client';
 const endpoint = clientCredentials.databaseURL;
 
 const getSong = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team.json?orderBy="uid"&equalTo="${uid}"`, {
+  fetch(`${endpoint}/Songs.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -14,9 +14,8 @@ const getSong = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: DELETE Team
 const deleteSong = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team/${firebaseKey}.json`, {
+  fetch(`${endpoint}/Songs/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -27,9 +26,8 @@ const deleteSong = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: GET SINGLE Team
 const getSingleSong = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team/${firebaseKey}.json`, {
+  fetch(`${endpoint}/Songs/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -40,9 +38,8 @@ const getSingleSong = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: CREATE Team
 const createSong = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team.json`, {
+  fetch(`${endpoint}/Songs.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -54,9 +51,8 @@ const createSong = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// TODO: UPDATE Team
 const updateSong = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/team/${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/Songs/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -69,9 +65,9 @@ const updateSong = (payload) => new Promise((resolve, reject) => {
 });
 
 const getSongDetails = async (firebaseKey) => {
-  const player = await getSingleSong(firebaseKey);
+  const song = await getSingleSong(firebaseKey);
 
-  return { ...player };
+  return { ...song };
 };
 
 export {
