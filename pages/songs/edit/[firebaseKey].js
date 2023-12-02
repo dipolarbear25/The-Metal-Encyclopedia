@@ -12,5 +12,7 @@ export default function EditAlbum() {
     getSingleSong(firebaseKey).then(setEditItem);
   }, [firebaseKey]);
 
+  console.warn(editItem);
+
   return (<SongForm obj={editItem} />);
 }

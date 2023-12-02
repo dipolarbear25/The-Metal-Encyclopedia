@@ -3,22 +3,24 @@ import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
-import { getSong, updateSong, createSong } from '../../api/songApi';
+import { updateSong, createSong } from '../../api/songApi';
+import { getAlbum } from '../../api/albumApi';
 
 const intialState = {
+  albumid: '',
   title: '',
   lyrics: '',
 };
 
 function SongForm({ obj }) {
   const [formInput, setFormInput] = useState(intialState);
-  const [, setSong] = useState([]);
+  const [albums, setAlbums] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
   useEffect(() => {
     if (obj.firebaseKey) setFormInput(obj);
-    getSong(user.uid).then(setSong);
+    getAlbum(user.uid).then(setAlbums);
   }, [obj, user]);
 
   const handleChange = (e) => {
@@ -64,7 +66,7 @@ function SongForm({ obj }) {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Lyrics</Form.Label>
           <Form.Control
-            type="url"
+            type="text"
             placeholder="Please paste the lyrics here"
             name="lyrics"
             value={formInput.lyrics}
@@ -72,6 +74,25 @@ function SongForm({ obj }) {
             required
           />
         </Form.Group>
+        <Form.Select
+          name="albumid"
+          onChange={handleChange}
+          value={formInput.albumid}
+          required
+        >
+          <option value="">Select An Album</option>
+
+          {
+          albums.map((album) => (
+            <option
+              key={album.firebaseKey}
+              value={album.firebaseKey}
+            >
+              {album.albumTitle}
+            </option>
+          ))
+        }
+        </Form.Select>
         <Button variant="primary" type="submit">
           {obj.firebaseKey ? 'Update Song' : 'Submit Song'}
         </Button>
@@ -82,6 +103,7 @@ function SongForm({ obj }) {
 
 SongForm.propTypes = {
   obj: PropTypes.shape({
+    albumid: PropTypes.string,
     title: PropTypes.string,
     lyrics: PropTypes.string,
     firebaseKey: PropTypes.string,

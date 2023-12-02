@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-// import Image from 'next/image';
 import { deleteSong } from '../api/songApi';
 
 function SongCard({ Obj, onUpdate }) {
@@ -13,7 +12,6 @@ function SongCard({ Obj, onUpdate }) {
       deleteSong(Obj.firebaseKey).then(() => onUpdate());
     }
   };
-  // console.warn(Obj);
   return (
     <Card>
       <Card.Header>{Obj.title}</Card.Header>
@@ -22,12 +20,15 @@ function SongCard({ Obj, onUpdate }) {
           <p>
             {Obj.lyrics}
           </p>
-          <Button variant="danger" onClick={deleteThisSong} className="m-2">
-            DELETE
-          </Button>
+          {/* <Link href={`/songs/edit/${Obj.firebaseKey}`} passHref>
+            <Button variant="info">VIEW</Button>
+          </Link> */}
           <Link href={`/songs/edit/${Obj.firebaseKey}`} passHref>
             <Button variant="info">EDIT</Button>
           </Link>
+          <Button variant="danger" onClick={deleteThisSong} className="m-2">
+            DELETE
+          </Button>
         </blockquote>
       </Card.Body>
     </Card>
@@ -36,9 +37,8 @@ function SongCard({ Obj, onUpdate }) {
 
 SongCard.propTypes = {
   Obj: PropTypes.shape({
-    albumid: PropTypes.number,
+    albumid: PropTypes.string,
     lyrics: PropTypes.string,
-    songid: PropTypes.string,
     title: PropTypes.string,
     firebaseKey: PropTypes.string,
   }).isRequired,

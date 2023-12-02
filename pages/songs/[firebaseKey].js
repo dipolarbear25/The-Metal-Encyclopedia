@@ -1,34 +1,32 @@
 import { React, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
-import { getSong } from '../../api/songApi';
+import { useRouter } from 'next/router';
 import SongCard from '../../components/songCards';
-import { useAuth } from '../../utils/context/authContext';
+import { getAlbumDetails } from '../../api/albumApi';
 
 function ViewAlbumSongs() {
   const [albumDetails, setalbumDetails] = useState([]);
-
-  const { user } = useAuth();
+  const router = useRouter();
+  const { firebaseKey } = router.query;
 
   const getADetails = () => {
-    getSong(user.uid).then(setalbumDetails);
+    getAlbumDetails(firebaseKey).then(setalbumDetails);
   };
 
   useEffect(() => {
     getADetails();
-  });
-
-  console.warn(albumDetails);
+  }, []);
 
   return (
     <div className="text-center my-4">
       <div>
-        <Link href="/albums/new" passHref>
-          <Button>Add an album</Button>
+        <Link href="/songs/new" passHref>
+          <Button>Add a song</Button>
         </Link>
         <div className="d-flex flex-wrap">
-          {albumDetails.map((song) => (
-            <SongCard key={song.firebaseKey} Obj={song} onUpdate={getADetails} />
+          {albumDetails.song?.map((album) => (
+            <SongCard key={album.firebaseKey} Obj={album} onUpdate={getADetails} />
           ))}
         </div>
       </div>

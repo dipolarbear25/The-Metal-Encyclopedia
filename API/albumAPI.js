@@ -64,12 +64,29 @@ const updateAlbum = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getAlbumDetails = async (firebaseKey) => {
-  const album = await getSingleAlbum(firebaseKey);
+const getSongAlbum = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/Songs.json?orderBy="albumid"&equalTo="${firebaseKey}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }).then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
 
-  return { ...album };
+const getAlbumDetails = async (albumfirebaseKey) => {
+  const album = await getSingleAlbum(albumfirebaseKey);
+  const song = await getSongAlbum(albumfirebaseKey);
+
+  return { ...album, song };
 };
-
 export {
   getAlbum,
   deleteAlbum,
@@ -77,4 +94,5 @@ export {
   updateAlbum,
   getAlbumDetails,
   getSingleAlbum,
+  getSongAlbum,
 };
