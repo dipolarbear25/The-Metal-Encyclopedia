@@ -5,14 +5,16 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
 // import Image from 'next/image';
-import { deleteAlbum } from '../api/albumApi';
+import { deleteAlbumSongs } from '../api/mergedDataApi';
 
 function AlbumCard({ Obj, onUpdate }) {
   const deleteThisAlbum = () => {
     if (window.confirm(`Would you like to delete ${Obj.albumTitle}?`)) {
-      deleteAlbum(Obj.firebaseKey).then(() => onUpdate());
+      deleteAlbumSongs(Obj.firebaseKey).then(() => onUpdate());
     }
   };
+
+  console.warn(Obj);
 
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>

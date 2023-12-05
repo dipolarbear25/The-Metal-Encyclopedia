@@ -22,6 +22,9 @@ export default function NavBar() {
             <Link passHref href="/albums/new">
               <Nav.Link>create an album</Nav.Link>
             </Link>
+            <Link passHref href="/songs/new">
+              <Nav.Link>create a song</Nav.Link>
+            </Link>
             <Button variant="danger" id="sign-out" onClick={signOut}>Sign Out</Button>
           </Nav>
         </Navbar.Collapse>

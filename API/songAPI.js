@@ -64,17 +64,10 @@ const updateSong = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getSongDetails = async (firebaseKey) => {
-  const song = await getSingleSong(firebaseKey);
-
-  return { ...song };
-};
-
 export {
   getSong,
   createSong,
   deleteSong,
   getSingleSong,
   updateSong,
-  getSongDetails,
 };
