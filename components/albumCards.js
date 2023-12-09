@@ -14,14 +14,13 @@ function AlbumCard({ Obj, onUpdate }) {
     }
   };
 
-  console.warn(Obj);
-
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
         <img src={Obj.albumLogo} alt="Album Cover" width="200" height="180" />
-        <Card.Title>{Obj.albumTitle}</Card.Title>
+        <Card.Title>Album name: {Obj.albumTitle}</Card.Title>
         <p className="card-text bold">Release Date: {Obj.albumReleaseDate}</p>
+        <p>By: {Obj.bandName}</p>
         <Link href={`/songs/${Obj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>

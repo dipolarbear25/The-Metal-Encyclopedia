@@ -35,14 +35,14 @@ function SongForm({ obj }) {
     e.preventDefault();
 
     if (obj.firebaseKey) {
-      updateSong(formInput).then(() => router.push('/'));
+      updateSong(formInput).then(() => router.push(`/songs/${formInput.albumid}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createSong(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateSong(patchPayload).then(() => {
-          router.push('/');
+          router.push(`/songs/${formInput.albumid}`);
         });
       });
     }
