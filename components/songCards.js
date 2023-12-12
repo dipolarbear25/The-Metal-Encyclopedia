@@ -20,9 +20,9 @@ function SongCard({ Obj, onUpdate }) {
           <p>
             {Obj.lyrics}
           </p>
-          {/* <Link href={`/songs/edit/${Obj.firebaseKey}`} passHref>
+          <Link href={`/songs/view/${Obj.firebaseKey}`} passHref>
             <Button variant="info">VIEW</Button>
-          </Link> */}
+          </Link>
           <Link href={`/songs/edit/${Obj.firebaseKey}`} passHref>
             <Button variant="info">EDIT</Button>
           </Link>

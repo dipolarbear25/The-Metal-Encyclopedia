@@ -80,18 +80,17 @@ function SongForm({ obj }) {
           value={formInput.albumid}
           required
         >
-          <option value="">Select An Album</option>
-
+          <option value="">Select an album for this song</option>
           {
-          albums.map((album) => (
-            <option
-              key={album.firebaseKey}
-              value={album.firebaseKey}
-            >
-              {album.albumTitle}
-            </option>
-          ))
-        }
+            albums.map((album) => (
+              <option
+                key={album.firebaseKey}
+                value={album.firebaseKey}
+              >
+                {album.albumTitle}
+              </option>
+            ))
+          }
         </Form.Select>
         <Button variant="primary" type="submit">
           {obj.firebaseKey ? 'Update Song' : 'Submit Song'}
