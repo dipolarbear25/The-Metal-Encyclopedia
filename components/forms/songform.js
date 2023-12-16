@@ -7,6 +7,7 @@ import { updateSong, createSong } from '../../api/songApi';
 import { getAlbum } from '../../api/albumApi';
 
 const intialState = {
+  YTLink: '',
   albumid: '',
   title: '',
   lyrics: '',
@@ -74,6 +75,19 @@ function SongForm({ obj }) {
             required
           />
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Youtube Link</Form.Label>
+          <Form.Control
+            type="url"
+            placeholder="Please paste the Youtube embed link here"
+            name="YTLink"
+            value={formInput.YTLink}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+
         <Form.Select
           name="albumid"
           onChange={handleChange}
@@ -102,6 +116,7 @@ function SongForm({ obj }) {
 
 SongForm.propTypes = {
   obj: PropTypes.shape({
+    YTLink: PropTypes.string,
     albumid: PropTypes.string,
     title: PropTypes.string,
     lyrics: PropTypes.string,

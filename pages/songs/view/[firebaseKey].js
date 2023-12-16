@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getSongDetails } from '../../../api/mergedDataApi';
@@ -25,6 +26,10 @@ export default function ViewPlayer() {
         <h5>
           song name: {songDetails.title}
           <br /> <br /> lyrics: {songDetails.lyrics}
+          <br />
+          <br />
+          <br />
+          <iframe width="560" height="315" src={songDetails.YTLink} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
         </h5>
       </div>
     </>
