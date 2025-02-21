@@ -15,6 +15,8 @@ function Home() {
     getAlbum(user.uid).then(setAlbum);
   };
 
+  console.warn(Album);
+
   useEffect(() => {
     getAllTheAlbum();
   }, []);
